@@ -1,17 +1,23 @@
 package com.devsuperior.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
+@Entity
+@Table(name = "tb_category")
 public class Category implements Serializable {
 
 
-    private UUID id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
 
 
-    public Category(){
+    public Category() {
 
     }
 
@@ -19,11 +25,11 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
