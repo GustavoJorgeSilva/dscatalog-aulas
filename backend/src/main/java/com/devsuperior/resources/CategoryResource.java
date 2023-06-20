@@ -1,7 +1,7 @@
 package com.devsuperior.resources;
 
 
-import com.devsuperior.entities.Category;
+import com.devsuperior.dto.CategoryDTO;
 import com.devsuperior.services.CategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +22,10 @@ public class CategoryResource {
 
 
     @GetMapping
-    public ResponseEntity<List<Category>> findAll(){
+    public ResponseEntity<List<CategoryDTO>> findAll(){
 
-        List<Category> list = categoryService.findAll();
-
+        List<CategoryDTO> list = categoryService.findAll();
         return ResponseEntity.ok().body(list);
-
     }
 
 
